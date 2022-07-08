@@ -35,9 +35,11 @@ function drawSnowflake(aSnowflake) {
 
 function moveSnowflake(aSnowflake) {
     aSnowflake.x += randomInt(-2, 3);
-    aSnowflake.y += randomInt(0, 10);
+    aSnowflake.y += randomInt(2, 10);
     if (aSnowflake.y > 600) {
+        // Teleport to random location
         aSnowflake.y = 0;
+        aSnowflake.x = randomInt(0, 800);
     }
 }
 

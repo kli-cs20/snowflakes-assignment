@@ -5,7 +5,7 @@ cnv.width = 800;
 cnv.height = 600;
 
 // Create an array of random Snowflake objects
-let snowflakes = createRandomSnowflakeArray(100);
+let snowflakes = createRandomSnowflakeArray(10);
 
 requestAnimationFrame(draw);
 function draw() {
