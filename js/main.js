@@ -5,7 +5,7 @@ cnv.width = 800;
 cnv.height = 600;
 
 // Create an array of random Snowflake objects
-let snowflakes = createRandomSnowflakeArray(10);
+let snowflakes = createRandomSnowflakeArray(5);
 
 requestAnimationFrame(draw);
 function draw() {
@@ -49,6 +49,4 @@ function mousemoveHandler(e) {
     mouseY = e.y - cnvRect.y;
 }
 
-// Timers
-setInterval(addSnowflake, 1000); // Every second
 
