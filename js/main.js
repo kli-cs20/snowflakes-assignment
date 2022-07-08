@@ -5,7 +5,7 @@ cnv.width = 800;
 cnv.height = 600;
 
 // Create an array of random Snowflake objects
-let snowflakes = [];
+let snowflakes = createRandomSnowflakeArray(100);
 
 requestAnimationFrame(draw);
 function draw() {
@@ -30,13 +30,12 @@ document.addEventListener("mousemove", mousemoveHandler)
 function keydownHandler(e) {
     if (e.keyCode === 39) {
         // Right Arrow Key adds new Snowflake
-        // snowflakes.push(newRandomSnowflake());
-        snowflakes.push(newSnowflake(400, 300, 30, randomRGB()));
+        snowflakes.push(newRandomSnowflake());
     } else if (e.keyCode === 37) {
         // Left arrow key takes away Snowflake
         snowflakes.pop();
     } else if (e.keyCode === 32) {
-        // Space key creates Snowflake on mouse
+        // Space key creates Snowflake on mouse cursor
         addSnowflake();
     }
 }

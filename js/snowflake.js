@@ -13,8 +13,8 @@ function newRandomSnowflake() {
     return {
         x: randomInt(0, cnv.width),
         y: randomInt(0, cnv.height),
-        r: randomInt(5, 35),
-        color: randomRGB()
+        r: randomInt(5, 10),  
+        color: "white"
     };
 }
 
@@ -29,16 +29,19 @@ function createRandomSnowflakeArray(total) {
 }
 
 function drawSnowflake(aSnowflake) {
-    stroke(aSnowflake.color);
-    circle(aSnowflake.x, aSnowflake.y, aSnowflake.r, "stroke");
+    fill(aSnowflake.color);
+    circle(aSnowflake.x, aSnowflake.y, aSnowflake.r, "fill");
 }
 
 function moveSnowflake(aSnowflake) {
-    aSnowflake.x += randomInt(-3, 4);
-    aSnowflake.y += randomInt(-3, 4);
+    aSnowflake.x += randomInt(-2, 3);
+    aSnowflake.y += randomInt(0, 10);
+    if (aSnowflake.y > 600) {
+        aSnowflake.y = 0;
+    }
 }
 
 // Add Snowflake on mouse cursor coordinates
 function addSnowflake() {
-    snowflakes.push(newSnowflake(mouseX, mouseY, 30, randomRGB()));
+    snowflakes.push(newSnowflake(mouseX, mouseY, randomInt(5, 10), "white"));
 }
