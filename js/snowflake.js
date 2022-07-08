@@ -1,10 +1,11 @@
 // SNOWFLAKE FUNCTIONS
 
-function newSnowflake(initX, initY, initR, initColor) {
+function newSnowflake(initX, initY, initR, initSpeed, initColor) {
     return {
         x: initX,
         y: initY,
         r: initR,
+        speed: initSpeed,
         color: initColor
     };
 }
@@ -13,7 +14,8 @@ function newRandomSnowflake() {
     return {
         x: randomInt(0, cnv.width),
         y: randomInt(0, cnv.height),
-        r: randomInt(5, 10),  
+        r: randomInt(5, 10), 
+        speed: randomDec(2, 10), // Assign unique speed 
         color: "white"
     };
 }
@@ -35,7 +37,7 @@ function drawSnowflake(aSnowflake) {
 
 function moveSnowflake(aSnowflake) {
     aSnowflake.x += randomInt(-2, 3);
-    aSnowflake.y += randomInt(2, 10);
+    aSnowflake.y += aSnowflake.speed;
     if (aSnowflake.y > 600) {
         // Teleport to random location
         aSnowflake.y = 0;
@@ -45,5 +47,5 @@ function moveSnowflake(aSnowflake) {
 
 // Add Snowflake on mouse cursor coordinates
 function addSnowflake() {
-    snowflakes.push(newSnowflake(mouseX, mouseY, randomInt(5, 10), "white"));
+    snowflakes.push(newSnowflake(mouseX, mouseY, randomInt(5, 10), randomDec(2, 10), "white"));
 }
