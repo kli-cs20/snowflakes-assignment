@@ -28,11 +28,11 @@ document.addEventListener("mousemove", mousemoveHandler)
 
 
 function keydownHandler(e) {
-    if (e.keyCode === 39) {
-        // Right Arrow Key adds new Snowflake
+    if (e.keyCode === 38) {
+        // Up Arrow Key adds new Snowflake
         snowflakes.push(newRandomSnowflake());
-    } else if (e.keyCode === 37) {
-        // Left arrow key takes away Snowflake
+    } else if (e.keyCode === 40) {
+        // Down arrow key takes away Snowflake
         snowflakes.pop();
     } else if (e.keyCode === 32) {
         // Space key creates Snowflake on mouse cursor
